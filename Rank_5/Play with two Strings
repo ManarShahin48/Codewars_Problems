@@ -1,0 +1,44 @@
+#include <string>
+using namespace std;
+std::string work_on_strings(string str1,string str2) 
+{
+  string bigstr = "";
+  int coun;
+  for(int i = 0;i < str1.length();i++)
+    {
+    coun=0;
+      for(int j = 0; j<str2.length();j++)
+        {
+          if(str1[i] == toupper(str2[j]) || str1[i] == tolower(str2[j])) coun++;
+        }
+          if(coun % 2 != 0)
+            {
+             if(isupper(str1[i])) 
+               bigstr +=tolower(str1[i]);
+            else 
+               bigstr +=toupper(str1[i]);
+            }
+          else
+           bigstr += str1[i];
+        
+    }
+  for(int i = 0;i < str2.length();i++)
+    {
+    coun=0;
+      for(int j = 0; j<str1.length();j++)
+        {
+          if(str2[i] == toupper(str1[j]) || str2[i] == tolower(str1[j])) coun++;
+        }
+          if(coun % 2 != 0)
+            {
+             if(isupper(str2[i])) 
+               bigstr +=tolower(str2[i]);
+            else 
+               bigstr +=toupper(str2[i]);
+            }
+          else
+            bigstr += str2[i];
+        
+    }
+  return bigstr;
+}
