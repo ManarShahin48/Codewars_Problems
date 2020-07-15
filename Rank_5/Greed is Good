@@ -1,0 +1,25 @@
+#include <vector>
+
+int score(const std::vector<int>& dice) {
+  int one,two,three,four,five,six,sum = 0;
+  for(int i = 0;i<dice.length();i++)
+    {
+      if(dice[i]==1) one++;
+      if(dice[i]==2) two++;
+      if(dice[i]==3) three++;
+      if(dice[i]==4) four++;
+      if(dice[i]==5) five++;
+      if(dice[i]==6) six++;  
+      
+    }
+  if(one==1) sum += 100;
+  if(five==1) sum += 50;
+  if(one==3) sum += 1000;
+  if(two==3) sum += 200;
+  if(three==3) sum += 300;
+  if(four==3) sum += 400;
+  if(five==3) sum += 500;
+  if(six==3) sum += 600;
+  
+  return sum;
+}
