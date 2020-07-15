@@ -1,0 +1,16 @@
+using namespace std;
+class RGBToHex
+{
+  public:
+  static std::string rgb(int r, int g, int b)
+  {
+      string str; 
+      str += to_string(r / 16)[0];
+      str += to_string(r % 16)[0];
+      str += to_string(g / 16)[0];
+      str += to_string(g % 16)[0];
+      str += to_string(b / 16)[0];
+      str += to_string(b % 16)[0];
+      return str;
+  }
+};
