@@ -1,0 +1,10 @@
+function solve(n){
+  for(var i=1;i<n;i++)
+    {
+      var x = i*i;
+      var y = x+n;
+      if(Math.sqrt(y) % 1 === 0)
+        return x;
+    }
+  return -1;
+}
